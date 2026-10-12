@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidal Client</title>
+<meta name="description" content="Tidal Client is a launcher for Minecraft: Java Edition. Terms of Service and Privacy Policy.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='9' fill='%2305080f'/%3E%3Cpath d='M10 32C8 18 22 8 38 12C27 13 20 21 22 30C24 38 33 40 40 35' stroke='%2322d3ee' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M14 36C20 42 32 42 38 36' stroke='%230e7490' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root { --bg:#05080f; --text:#d6e2ee; --muted:#8da2b8; --line:#1c2d47; --accent:#22d3ee; }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body { margin: 0; color: var(--text); font: 16px/1.65 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  main { max-width: 40rem; margin: 0 auto; padding: 40px 20px 64px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  header svg { width: 44px; height: 44px; flex: none; }
+  header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+  a { color: var(--accent); }
+  p, li { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+  h3 { font-size: 16px; font-weight: 600; margin: 24px 0 6px; }
+  .about p { color: var(--text); }
+  .muted, .date { color: var(--muted); font-size: 14px; }
+  .pick { margin: 36px 0 8px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .pick label { color: var(--muted); }
+  select { font: inherit; color: var(--text); background: #0a1424; border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; }
+  select:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  article h2:first-child { margin-top: 20px; font-size: 20px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  footer p { margin-bottom: 8px; }
+  code { font: 14px Consolas, monospace; background: #0a1424; padding: 1px 5px; border-radius: 4px; }
+</style>
+<noscript><style>.pick { display: none; } article { margin-top: 32px; }</style></noscript>
+</head>
+<body>
+<main>
+  <header>
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect width="48" height="48" rx="9" fill="#05080f"/><path d="M10 32C8 18 22 8 38 12C27 13 20 21 22 30C24 38 33 40 40 35" stroke="#22d3ee" stroke-width="3" stroke-linecap="round"/><path d="M14 36C20 42 32 42 38 36" stroke="#0e7490" stroke-width="2" stroke-linecap="round"/></svg>
+    <h1>Tidal Client</h1>
+  </header>
+
+  <section class="about">
+    <p>Tidal Client is a launcher for Minecraft: Java Edition on Windows. You sign in with your own Microsoft account, it downloads the game from Mojang, and it starts Minecraft for you. You can also add Fabric mods, resource packs and shaders from Modrinth, or your own files.</p>
+    <p>We don't run any servers for the launcher. There are no Tidal accounts, no analytics and no ads. Your sign-in details stay on your PC.</p>
+    <h2>How sign-in works</h2>
+    <p>Tidal uses the Microsoft device code flow. The launcher shows a short code, you enter it on microsoft.com and approve the sign-in there. Tidal never sees your password. It asks for the <code>XboxLive.signin</code> and <code>offline_access</code> permissions, exchanges the result for an Xbox Live and then a Minecraft token, and checks that the account owns Minecraft: Java Edition. Tokens are stored on your PC in a file encrypted with the Windows key store.</p>
+    <p><a href="https://github.com/iitzrob/oi-oi-oi/releases">Download Tidal Client</a> &nbsp;·&nbsp; <a href="https://github.com/iitzrob/oi-oi-oi">Source on GitHub</a> &nbsp;·&nbsp; <a href="https://github.com/iitzrob/oi-oi-oi/issues">Contact and support</a></p>
+    <p class="muted">Tidal Client is an unofficial launcher. It is not made by, approved by or connected to Mojang Studios, Microsoft or Modrinth. Minecraft is a trademark of Mojang AB.</p>
+  </section>
+
+  <div class="pick" id="pick">
+    <label for="doc">Read our</label>
+    <select id="doc">
+      <option value="terms">Terms of Service</option>
+      <option value="privacy">Privacy Policy</option>
+    </select>
+  </div>
+
+  <article id="terms">
+    <h2>Terms of Service</h2>
+    <p class="date">Effective October 12, 2026</p>
+
+    <p>These terms cover your use of Tidal Client. By installing or using it, you agree to them. If you don't agree, don't use it.</p>
+
+    <h3>What Tidal Client is</h3>
+    <p>Tidal Client is a launcher. It signs you in to your Microsoft account, downloads Minecraft: Java Edition from Mojang's servers, and starts the game. It can also install mods, resource packs and shaders. It is not Minecraft, and it is not a product of Mojang or Microsoft.</p>
+
+    <h3>You need to own Minecraft</h3>
+    <p>To play online you need your own copy of Minecraft: Java Edition on the Microsoft account you sign in with. We don't sell, host or give out Minecraft. The game files come directly from Mojang and are checked against Mojang's published hashes. We don't help anyone get around Minecraft's licence or account checks.</p>
+    <p>The launcher also lets you type a local player name so you can open singleplayer on your own PC. That is not a way to play on servers without owning the game, and we don't support using it like that. Most servers will refuse these names anyway.</p>
+
+    <h3>Your account</h3>
+    <p>You sign in with your own Microsoft account. Don't share your account or your tokens with anyone. You are responsible for what happens under your account while you use Tidal.</p>
+
+    <h3>Mods, packs and uploaded files</h3>
+    <p>Mods, resource packs and shaders from Modrinth are made by other people and come with their own licences. Tidal checks downloads against Modrinth's hashes and scans every mod and pack for things like hidden programs, files that aren't what they claim to be, and code that sends data to webhooks. That scan is a filter, not a guarantee. Anything you install is at your own risk, so only use files from people you trust.</p>
+    <p>When you add your own file in My uploads, it is copied into a folder on your PC. Tidal doesn't upload it anywhere. Only add files you have the right to use, and don't add malware. Files that fail the scan are blocked.</p>
+
+    <h3>What you can't do</h3>
+    <ul>
+      <li>Use Tidal to steal accounts, tokens or personal data, or to spread malware.</li>
+      <li>Use Tidal to pirate Minecraft or to get around its licence.</li>
+      <li>Use Tidal to attack, overload or cheat on servers or other players.</li>
+      <li>Pass off a modified copy of Tidal as the official Tidal Client.</li>
+    </ul>
+
+    <h3>Updates</h3>
+    <p>Tidal checks GitHub for new versions when it starts and while it runs, and downloads them automatically. The update is installed when you restart. You can uninstall Tidal at any time.</p>
+
+    <h3>No warranty</h3>
+    <p>Tidal Client is provided as it is, without any promise that it will work, be free of bugs or keep working with future Minecraft versions. Mods and launcher changes can crash the game or damage a world, so keep backups of the worlds you care about.</p>
+
+    <h3>Liability</h3>
+    <p>As far as the law allows, we aren't responsible for lost worlds, lost accounts, lost data or any other damage that comes from using Tidal Client, or from mods and files you install with it.</p>
+
+    <h3>Ending your use</h3>
+    <p>You can stop using Tidal whenever you like by uninstalling it. We can stop offering Tidal, remove features, or block files or versions if they are being abused, if they put players at risk, or if Mojang or Microsoft require it.</p>
+
+    <h3>Changes to these terms</h3>
+    <p>If we change these terms, the new version goes on this page with a new date at the top. Continuing to use Tidal after that means you accept the changes.</p>
+
+    <h3>Contact</h3>
+    <p>Questions or problems: <a href="https://github.com/iitzrob/oi-oi-oi/issues">open an issue on GitHub</a>.</p>
+  </article>
+
+  <article id="privacy" hidden>
+    <h2>Privacy Policy</h2>
+    <p class="date">Effective October 12, 2026</p>
+
+    <p>The short version: Tidal Client has no servers of its own, no Tidal accounts, no analytics and no ads. We don't collect your data. What the launcher needs is kept on your PC, and the only places it talks to are the services listed below.</p>
+
+    <h3>What is stored on your PC</h3>
+    <ul>
+      <li>Your Minecraft account name and ID, and the sign-in tokens Microsoft and Mojang give the launcher.</li>
+      <li>Your settings: memory, Minecraft version, mod loader, text font and typing sound.</li>
+      <li>Game files, mods, packs, and any files you add in My uploads, with the name, picture and description you gave them.</li>
+    </ul>
+    <p>Account details, tokens and settings are kept in one file encrypted with the Windows key store (the same protection Windows uses for its own saved credentials). Everything lives in <code>%APPDATA%\tidal-client</code>. We never see your Microsoft password, because you enter it on microsoft.com, not in Tidal.</p>
+
+    <h3>Who the launcher connects to</h3>
+    <p>The launcher makes requests to these services to do its job. Like any website or app, each of them can see your IP address, and each has its own privacy policy.</p>
+    <ul>
+      <li><strong>Microsoft and Xbox Live</strong> (login.microsoftonline.com, xboxlive.com): to sign you in. Your tokens are sent only to Microsoft, Xbox Live and Minecraft services.</li>
+      <li><strong>Mojang and Minecraft services</strong> (api.minecraftservices.com, api.mojang.com, sessionserver.mojang.com, textures.minecraft.net): to log in to Minecraft, check you own the game, look up skins, and change your skin if you ask.</li>
+      <li><strong>Mojang download servers</strong> (piston-meta.mojang.com, launchermeta.mojang.com, resources.download.minecraft.net): to download the game, its libraries, assets and Java.</li>
+      <li><strong>Fabric</strong> (meta.fabricmc.net, maven.fabricmc.net): to install the Fabric mod loader if you choose it.</li>
+      <li><strong>Modrinth</strong> (api.modrinth.com, cdn.modrinth.com): to search for and download mods, packs and shaders when you use Browse.</li>
+      <li><strong>GitHub</strong> (github.com): to check for and download Tidal updates.</li>
+    </ul>
+    <p>When you start Minecraft, the launcher passes your session token to the game on your PC so it can join servers. This is how every Minecraft launcher works.</p>
+
+    <h3>What we collect</h3>
+    <p>Nothing. Tidal doesn't send us usage data, crash reports or logs, and we have no server that could receive them. This website is a static page hosted on GitHub Pages and doesn't use cookies or trackers. GitHub may keep its own server logs of visits.</p>
+
+    <h3>Files you add</h3>
+    <p>Files you add in My uploads are copied to a folder on your PC. They are scanned there and are never sent to us or to anyone else by Tidal.</p>
+
+    <h3>Sharing and selling</h3>
+    <p>We don't have your data, so we can't sell it or share it.</p>
+
+    <h3>Deleting your data</h3>
+    <ul>
+      <li>In Tidal, go to Security and choose Wipe data to remove your accounts, tokens and settings.</li>
+      <li>To remove everything, including downloaded game files and uploads, uninstall Tidal and delete the <code>%APPDATA%\tidal-client</code> folder.</li>
+      <li>To cut off Tidal's access to your Microsoft account, remove it from the app permissions list at <a href="https://account.live.com/consent/Manage">account.live.com/consent/Manage</a>.</li>
+    </ul>
+
+    <h3>Children</h3>
+    <p>Tidal Client isn't aimed at children under 13. Accounts for younger players are managed through Microsoft family settings, and we collect no personal information from anyone.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>If this policy changes, the new version goes on this page with a new date at the top.</p>
+
+    <h3>Contact</h3>
+    <p>Questions about privacy: <a href="https://github.com/iitzrob/oi-oi-oi/issues">open an issue on GitHub</a>.</p>
+  </article>
+
+  <footer>
+    <p>Tidal Client is not affiliated with Mojang Studios, Microsoft or Modrinth. Minecraft is a trademark of Mojang AB.</p>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    var sel = document.getElementById('doc');
+    var names = { terms: 'Terms of Service', privacy: 'Privacy Policy' };
+    function show(id) {
+      if (!names[id]) id = 'terms';
+      sel.value = id;
+      document.querySelectorAll('article').forEach(function (a) { a.hidden = a.id !== id; });
+      document.title = names[id] + ' - Tidal Client';
+    }
+    sel.addEventListener('change', function () { history.replaceState(null, '', '#' + sel.value); show(sel.value); });
+    window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+    show(location.hash.slice(1));
+  })();
+</script>
+</body>
+</html>
